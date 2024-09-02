@@ -54,6 +54,17 @@ Create an image on top on all the dependencies  (Rename to Dockerfile1 to Docker
    Ex: docker tag 793fc225af2c vijetha/mytestapiimage:latest
 
 
+Running on EC2 instance:
+1.Spin EC2 instance machine on AWS
+2.Open cmd and navigate to pem file location on local.
+3.Enter ssh command from EC2 and enter. (Remove double quotes and ec2-user in place of  root)
+  Ex: ssh -i pemfilename ec2-user@xxx.amazonaws.com
+4.After step 3, we are inside ec2 instance.
+5.Enter docker and check if it is installed
+
+
+
+
 
 
 

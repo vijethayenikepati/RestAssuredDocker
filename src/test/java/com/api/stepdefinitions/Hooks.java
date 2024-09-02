@@ -1,17 +1,24 @@
 package com.api.stepdefinitions;
 
 import com.api.context.TestContext;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.junit.After;
+import org.junit.Before;
 
 public class Hooks {
-    @BeforeEach
+
+    private static final Logger LOGGER = LogManager.getLogger(Hooks.class);
+
+    @Before
     public void setUp() {
-        TestContext.getInstance();
+        LOGGER.info("Starting scenario...");
     }
 
-    @AfterEach
+
+    @After
     public void tearDown() {
-        TestContext.getInstance().setPostItemResponse(null);
+        TestContext.remove();
+        LOGGER.info("TestContext has been removed after scenario.");
     }
 }
