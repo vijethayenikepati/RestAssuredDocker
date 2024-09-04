@@ -1,5 +1,6 @@
 package com.api.context;
 
+import com.api.pojos.response.GetItemResponse;
 import io.restassured.response.Response;
 import lombok.Data;
 import org.junit.After;
@@ -9,6 +10,7 @@ public class TestContext {
 
     private Response postItemResponse;
     private Response getItemResponse;
+    private GetItemResponse getModelItemResponse;
     private String id;
 
     // ThreadLocal to store the TestContext instance for each thread
