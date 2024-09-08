@@ -2,7 +2,6 @@ package com.api.stepdefinitions;
 
 import com.github.tomakehurst.wiremock.WireMockServer;
 import com.github.tomakehurst.wiremock.client.WireMock;
-import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -16,8 +15,7 @@ public class WireMockSteps {
 
     private Response response;
 
-    @Before
-    public void setUp() {
+     static {
         WireMockServer wireMockServer = new WireMockServer(8080);
         wireMockServer.start();
         WireMock.configureFor("localhost", 8080);
